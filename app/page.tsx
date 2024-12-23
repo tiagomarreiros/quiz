@@ -16,12 +16,18 @@ export default function Home() {
   >([]);
 
   const [showWrong, setShowWrong] = useState(false);
+  const [showEnd, setShowEnd] = useState(false);
 
   const changeQuestion = (direction: "prev" | "next") => {
     if (direction === "prev" && currentQuestion > 0) {
       setCurrentQuestion(currentQuestion - 1);
     } else if (direction === "next" && currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
+    }
+    if (direction === "next" && currentQuestion === questions.length - 1) {
+      setShowEnd(true);
+    } else {
+      setShowEnd(false);
     }
   };
 
@@ -70,6 +76,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full gap-20">
+      {showEnd && <div>FIMM</div>}
       {!hasStarted ? (
         <button
           onClick={() => setHasStarted(true)}
@@ -104,6 +111,7 @@ export default function Home() {
               <button
                 onClick={() => changeQuestion("next")}
                 className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md shadow disabled:opacity-50 disabled:cursor-not-allowed"
+                //disabled={currentQuestion === questions.length - 1 || showWrong}
                 disabled={!optionSelected || showWrong}
               >
                 Próxima →
