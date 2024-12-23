@@ -68,13 +68,6 @@ export default function Home() {
     validateAnswer();
   }, [optionSelected, currentQuestionData, validateAnswer]);
 
-  /*
-  const handleNext = async () => {
-    const isValid = await trigger(`step${activeStep + 1}`); // Valida o campo do passo atual
-    if (isValid) {
-      setActiveStep((prev) => prev + 1);
-    }
-  };*/
   return (
     <div className="flex flex-col items-center justify-center h-full w-full gap-20">
       {!hasStarted ? (
@@ -111,7 +104,7 @@ export default function Home() {
               <button
                 onClick={() => changeQuestion("next")}
                 className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md shadow disabled:opacity-50 disabled:cursor-not-allowed"
-                disabled={currentQuestion === questions.length - 1 || showWrong}
+                disabled={!optionSelected || showWrong}
               >
                 Próxima →
               </button>
