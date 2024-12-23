@@ -76,8 +76,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center h-full w-full gap-20">
-      {showEnd && <div>FIMM</div>}
-      {!hasStarted ? (
+      {showEnd ? (
+        <div>FIM</div>
+      ) : !hasStarted ? (
         <button
           onClick={() => setHasStarted(true)}
           className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md shadow disabled:opacity-50 disabled:cursor-not-allowed"
