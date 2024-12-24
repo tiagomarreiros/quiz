@@ -144,7 +144,17 @@ export default function Home() {
           </div>
         </>
       )}
-      {showWrong && <div>Opppppps</div>}
+      {showWrong && (
+        <div>
+          <p>Erraste! Tenta outra vez</p>
+          <Image
+            src="/images/teststart.jpg"
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
+        </div>
+      )}
     </div>
   );
 }
