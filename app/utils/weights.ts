@@ -52,10 +52,32 @@ export const questions = [
         id: 3,
       },
     ],
-    correctAnswer: 2,
+    correctAnswer: 3,
   },
   {
     id: 3,
+    question: "Quem acha que tem sempre razão?",
+    options: [
+      {
+        label: "Alícia",
+        value: "A",
+        id: 1,
+      },
+      {
+        label: "Cátia",
+        value: "B",
+        id: 2,
+      },
+      {
+        label: "Tiago",
+        value: "C",
+        id: 2,
+      },
+    ],
+    correctAnswer: 3,
+  },
+  {
+    id: 4,
     question: "Quem tem a mania de esconder coisas em casa?",
     options: [
       {
@@ -77,7 +99,7 @@ export const questions = [
     correctAnswer: 2,
   },
   {
-    id: 4,
+    id: 5,
     question: "O que irrita o Tiago?",
     options: [
       {
@@ -91,7 +113,7 @@ export const questions = [
         id: 2,
       },
       {
-        label: "Sujarem a casa logo depois de a terem limpo",
+        label: "Sujarem e desarrumarem a casa logo depois de a terem limpo",
         value: "C",
         id: 3,
       },
@@ -103,6 +125,39 @@ export const questions = [
       },
       {
         label: "Todas as respostas anteriores estão correctas",
+        value: "E",
+        id: 5,
+      },
+    ],
+    correctAnswer: 5,
+  },
+  {
+    id: 6,
+    question: "O que irrita a Cátia?",
+    options: [
+      {
+        label: "Perguntarem a mesma coisa várias vezes",
+        value: "A",
+        id: 1,
+      },
+      {
+        label: "O miar da Eve",
+        value: "B",
+        id: 2,
+      },
+      {
+        label: "Não a ouvirem à primeira",
+        value: "C",
+        id: 3,
+      },
+      {
+        label: "Dizerem-lhe que tem a mania de esconder coisas",
+        value: "D",
+        id: 4,
+      },
+      {
+        label:
+          "Para além das opções anteriores, tudo na vida é capaz de a irritar, incluindo esta pergunta",
         value: "E",
         id: 5,
       },
