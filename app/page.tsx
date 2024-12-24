@@ -1,6 +1,8 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState } from "react";
+import Image from "next/image";
+
 import { Question } from "./components/Question";
 import { questions } from "./utils/weights";
 import { Stepper } from "./components/Stepper";
@@ -79,13 +81,23 @@ export default function Home() {
       {showEnd ? (
         <div>FIM</div>
       ) : !hasStarted ? (
-        <button
-          onClick={() => setHasStarted(true)}
-          className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md shadow disabled:opacity-50 disabled:cursor-not-allowed"
-          disabled={currentQuestion === questions.length - 1}
-        >
-          Começar
-        </button>
+        <div className="flex flex-col items-center justify-center h-full w-full gap-2">
+          <h3>Lets play</h3>
+          <Image
+            src="/images/astro.webp"
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
+          <h3>Lets play Lets play Lets play Lets play</h3>
+          <button
+            onClick={() => setHasStarted(true)}
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md shadow disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={currentQuestion === questions.length - 1}
+          >
+            Começar
+          </button>
+        </div>
       ) : (
         <>
           <Stepper
@@ -107,7 +119,7 @@ export default function Home() {
                 className="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-gray-700 rounded-md shadow disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={currentQuestion === 0}
               >
-                ← Anterior
+                ←
               </button>
               <button
                 onClick={() => changeQuestion("next")}
@@ -115,7 +127,7 @@ export default function Home() {
                 //disabled={currentQuestion === questions.length - 1 || showWrong}
                 disabled={!optionSelected || showWrong}
               >
-                Próxima →
+                →
               </button>
             </div>
           </div>
