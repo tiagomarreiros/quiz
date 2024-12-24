@@ -79,17 +79,28 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center h-full w-full gap-20">
       {showEnd ? (
-        <div>FIM</div>
-      ) : !hasStarted ? (
-        <div className="flex flex-col items-center justify-center h-full w-full gap-2">
-          <h3>Lets play</h3>
+        <div>
           <Image
-            src="/images/astro.webp"
+            src="/images/teststart2.jpg"
             width={500}
             height={500}
             alt="Picture of the author"
           />
-          <h3>Lets play Lets play Lets play Lets play</h3>
+          <h2>Parabéns! Conseguiste! A tua prenda está...</h2>
+        </div>
+      ) : !hasStarted ? (
+        <div className="flex flex-col items-center justify-center h-full w-full gap-2">
+          <h2>Vamos jogar um jogo</h2>
+          <Image
+            src="/images/teststart2.jpg"
+            width={500}
+            height={500}
+            alt="Picture of the author"
+          />
+          <h3>
+            Se acertares em todas as perguntas, vais saber onde está a tua
+            prenda verdadeira
+          </h3>
           <button
             onClick={() => setHasStarted(true)}
             className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md shadow disabled:opacity-50 disabled:cursor-not-allowed"
