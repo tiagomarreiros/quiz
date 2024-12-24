@@ -71,7 +71,7 @@ export const questions = [
       {
         label: "Tiago",
         value: "C",
-        id: 2,
+        id: 3,
       },
     ],
     correctAnswer: 3,
