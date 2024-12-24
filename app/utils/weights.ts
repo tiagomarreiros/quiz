@@ -74,7 +74,7 @@ export const questions = [
         id: 3,
       },
     ],
-    correctAnswer: 3,
+    correctAnswer: 2,
   },
   {
     id: 4,
